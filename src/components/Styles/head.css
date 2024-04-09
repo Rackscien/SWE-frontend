@@ -1,0 +1,29 @@
+.headM{
+    /* height: 90vh; */
+    /* width: 100vw;
+    /* background-color: gray; 
+    background-image: url(../assets/img1.jpg); */
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    font-size: 40px;
+    color: aliceblue;
+}
+
+.headM div{
+    border: 2px solid black;
+    margin: 20px;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    text-transform: capitalize;
+    /* padding: 30px; */
+}

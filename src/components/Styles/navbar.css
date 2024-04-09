@@ -1,0 +1,30 @@
+.navbar{
+    /* overflow: hidden;
+    position: fixed; */
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(206, 202, 202);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-image: url(../assets/img1.jpg); */
+}
+
+.navbar div{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+    text-transform: uppercase ;
+    text-decoration: none;
+    
+}
+Link{
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+}
+Link:hover{
+    color: aliceblue
+    ;
+}

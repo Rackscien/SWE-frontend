@@ -1,0 +1,36 @@
+
+.cardA{
+    background-color: white;
+    width: 20vw;
+    height: 25vh;
+    margin: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px white;
+}
+/* .cardB div{
+    height: 25vh;
+    width: 25vw;
+    background-color: white;
+    margin: 20px;
+} */
+
+.cardA div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 13px;
+    /* border: 2px solid black; */
+}
+.card div h3{
+    font-size: larger;
+}
+.card div p{
+    font-size: larger;
+    font-weight: bold;
+}
