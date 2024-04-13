@@ -40,14 +40,14 @@ const Login = () => {
     }
     else{
       alert('Successful Login');
-      if(type === 'Main'){
+      if(type === 'Head'){
         navigate('/head')
       }
       else if(type === 'Manager'){
         navigate('/manager')
       }
       else if(type === 'Adjuster'){
-        navigate('/adjuster')
+        navigate('/adjuster',{state:{name,email,type}})
       }
       else{
         navigate('/showMachine')
@@ -101,7 +101,7 @@ const Login = () => {
             required
           >
             <option value="User">User</option>
-            <option value="Main">Main</option>
+            <option value="Head">Head</option>
             <option value="Manager">Manager</option>
             <option value="Adjuster">Adjuster</option>
           </select>

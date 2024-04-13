@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = process.env.machine_url || "http://localhost:8000/api/machine";
+const baseurl = process.env.machine_url || "https://swe-backend-n3rd.onrender.com/api/machine";
 
 const getAllMachine = (setMachine) => {
     axios.get(baseurl)
@@ -25,12 +25,12 @@ const addMachine = (data,setData,setMachine) => {
     })
     .catch((err)=> console.log(err))
 }
-const updateMachine = (machineId,data,setData,setMachine) => {
-    axios.put(baseurl,{id : machineId,data})
-    .then((ele)=>{
+const updateMachine = (machineId,data,setData) => {
+    axios.patch(`${baseurl}/${machineId}`,data)
+    .then(({ele})=>{
         console.log(ele);
         setData("")
-        getAllMachine(setMachine)
+        // getAllMachine(setMachine)
     })
     .catch((err) => console.log(err));
 }

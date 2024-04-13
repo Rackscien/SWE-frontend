@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../Styles/cardAdjuster.css'
 
-export default function CardAdjuster({name,asigned,status}) {
+export default function CardAdjuster({name,status}) {
   return (
     <div>
       <div  className='cardA'>
@@ -10,11 +10,8 @@ export default function CardAdjuster({name,asigned,status}) {
             <h3>Name : {name}</h3>
         </div>
         <div>
-            <p>Assigned Machine : {asigned}</p>
             <p>Status : {status}</p>
         </div>
-
-
       </div>
     </div>
   )

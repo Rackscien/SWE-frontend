@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import {getAllMachine, addMachine}  from "../utils/MachineController";
+import { useNavigate } from 'react-router-dom';
 import '../Styles/AddMachine.css'
 
 
 export default function AddMachine() {
+    const navigate = useNavigate();
     const [machine,setMachine] = useState([]);
   useEffect(()=>{
     getAllMachine(setMachine)
@@ -28,7 +30,13 @@ export default function AddMachine() {
     e.preventDefault();
     addMachine(formData,setFormData,setMachine);
     alert("Machine Added");
-
+    setFormData({
+      id: '',
+      name: '',
+      assignedToAdjuster: '',
+      status: ''
+    })
+    navigate('/showMachine')
   };
   return (
     <div className='formAdd'>

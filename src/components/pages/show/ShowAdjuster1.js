@@ -5,8 +5,8 @@ import {getAllAdjuster, addAdjuster}  from "../../utils/AdjusterController";
 
 import { Link } from 'react-router-dom'
 
-export default function ShowAdjuster() {
-    const [Adjuster,setAdjuster] = useState([]);
+export default function ShowAdjuster1() {
+  const [Adjuster,setAdjuster] = useState([]);
     useEffect(()=>{
       console.log(Adjuster);
       getAllAdjuster(setAdjuster)
@@ -23,7 +23,6 @@ export default function ShowAdjuster() {
         </div>
 
         
-        <Link  style={{height: "20px", border:"2px solid black ",backgroundColor:"white" , color:'red', textDecoration:"none"}} to='/addAdjuster'>Add New Adjuster</Link>
         
         </div>
     </div>

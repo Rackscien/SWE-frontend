@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = process.env.Adjuster_url || "http://localhost:8000/api/adjuster";
+const baseurl = process.env.Adjuster_url || "https://swe-backend-n3rd.onrender.com/api/adjuster";
 
 const getAllAdjuster = (setAdjuster) => {
     axios.get(baseurl)
@@ -26,7 +26,7 @@ const addAdjuster = (data,setData,setAdjuster) => {
     .catch((err)=> console.log(err))
 }
 const updateAdjuster = (AdjusterId,data,setData,setAdjuster) => {
-    axios.put(baseurl,{id : AdjusterId,data})
+    axios.patch(`${baseurl}/${AdjusterId}`,data)
     .then((ele)=>{
         console.log(ele);
         setData("")

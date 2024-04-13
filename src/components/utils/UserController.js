@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = process.env.User_url || "http://localhost:8000/api/user";
+const baseurl = process.env.User_url || "https://swe-backend-n3rd.onrender.com/api/user";
 
 const getAllUser = (setUser) => {
     axios.get(baseurl)
@@ -26,7 +26,7 @@ const addUser = (data,setData,setUser) => {
     .catch((err)=> console.log(err))
 }
 const updateUser = (UserId,data,setData,setUser) => {
-    axios.put(baseurl,{id : UserId,data})
+    axios.patch(`${baseurl}/${UserId}`,{id : UserId,data})
     .then((ele)=>{
         console.log(ele);
         setData("")

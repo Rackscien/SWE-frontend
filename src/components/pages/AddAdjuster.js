@@ -1,16 +1,17 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import {getAllAdjuster, addAdjuster}  from "../utils/AdjusterController";
+import { useNavigate } from 'react-router-dom';
 import '../Styles/AddAdjuster.css'
 
 export default function AddAdjuster() {
+    const navigate = useNavigate();
     const [Adjuster,setAdjuster] = useState([]);
     useEffect(()=>{
       getAllAdjuster(setAdjuster)
       console.log(Adjuster);
     },[])
     const [formData, setFormData] = useState({
-      id: '',
       name: '',
       assigned_machine: '',
       status: ''
@@ -27,7 +28,12 @@ export default function AddAdjuster() {
       e.preventDefault();
       addAdjuster(formData,setFormData,setAdjuster);
       alert("Adjuster Added");
-  
+      setFormData({
+        name: '',
+        assigned_machine: '',
+        status: ''
+      })
+      navigate('/showAdjuster')
     };
     return (
       <div className='formAdd'>
@@ -42,12 +48,8 @@ export default function AddAdjuster() {
             <label htmlFor="name">Adjuster Name:</label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
           </div>
-           {/* <div className="form-group">
-            <label htmlFor="id">Adjuster ID:</label>
-            <input type="text" id="id" name="id" value={formData.AdjusterId} onChange={handleChange} required />
-          </div> */}
           <div className="form-group">
-            <label htmlFor="assigned_machine">Assigned To (Adjuster):</label>
+            <label htmlFor="assigned_machine">Assigned Machine:</label>
             <input type="text" id="assigned_machine" name="assigned_machine" value={formData.assigned_machine} onChange={handleChange} />
           </div>
           <div className="form-group">
